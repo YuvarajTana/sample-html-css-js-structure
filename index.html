@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Html</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+    <style>
+        *,html,body{
+            padding: 0;
+            margin: 0;
+        }
+        .invoice-container{
+            padding: 1rem; 
+            display: flex;
+            flex-direction: column;
+            width: 900px;
+        }
+        #title{
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 2rem;
+        }
+        #subTitle{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 2rem;
+            color: #b2b2b2;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        /* .footer1{
+            font-style: italic;
+        } */
+
+        #invoiceTable{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+            gap: 0.5rem;
+        }
+        .product{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #b2b2b2;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="invoice-container">
+
+        <header id="title">Contstruction project invoice template</header>
+
+        <div id="subTitle">
+            <span>Your Logo</span>
+            <span>Invoice</span>
+        </div>
+
+        <div id="invoiceTable">
+
+            <div id="leftTable">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div id="rightTable">
+
+            </div>
+        </div>  
+
+    </div>
+
+    <div class="container">
+
+
+    </div>
+
+    <script>
+        (function(){
+            // var, let, const
+            
+            // var a = 10;
+
+            const CompanyName = "Myntra";
+
+            let a = 20;
+
+            a = 30; 
+
+
+
+
+            
+            const invoiceContainer = document.querySelector('#leftTable');
+            
+            const footerEl =  document.createElement('div');
+
+            footerEl.textContent = "For all questions concerning this invoice, please contact";
+
+            // footerEl.classList.add('footer1');
+            footerEl.style.fontStyle = "italic"
+
+            invoiceContainer.appendChild(footerEl);
+
+
+
+            // [{}]
+
+//             ["Company Name", "123 Main Street", "dasfze","wadred","email address"].forEach(item => {
+//                 const footerEl =  document.createElement('div');
+
+// footerEl.textContent = item
+
+// // footerEl.classList.add('footer1');
+// // footerEl.style.fontStyle = "italic"
+
+// invoiceContainer.prepend(footerEl);
+//             })
+
+
+const products = [
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+    {name:"Mackboo pros", price:"30", imageUrl:"dfsfd", likes:20},
+];
+
+const prodcutContainer = document.querySelector('.container');
+
+products.forEach(({name}) => {
+    
+            
+    const productEl =  document.createElement('div');
+
+    productEl.textContent = name; 
+    productEl.classList.add('product');      
+    prodcutContainer.appendChild(productEl);
+})
+
+
+})();
+
+
+    </script>
+
+</body>
+</html>
